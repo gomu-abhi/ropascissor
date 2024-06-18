@@ -1,0 +1,86 @@
+*{
+    background-color: #2a2a2a;
+    color: #cacaca;
+}
+
+.first{
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #000000;
+    background-color:#cacaca;
+    font-size: large;
+}
+
+h1{
+    text-align: center;
+}
+
+.buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+
+.board{
+    margin-top: 40px;
+}
+
+.result{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.human .husc, .human h2{
+    color:rgb(21, 117, 228);
+    font-size: 30px;
+}
+
+.computer .compsc, .computer h2{
+    color:rgb(198, 27, 27);
+    font-size: 30px;
+}
+
+.husc, .compsc{
+    text-align: center;
+}
+
+.disp .huch{
+    color:rgb(21, 117, 228);
+}
+
+.disp .compch{
+    color:rgb(198, 27, 27);
+}
+
+.disp{
+    font-size: 30px;
+    display:flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.roundwin{
+    font-size:30px;
+    text-align: center;
+}
+
+.game{
+    font-size: 48px;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+    color:color-mix(in hsl shorter hue, rgb(255, 155, 16) 100%, black)
+}
+
+.new{
+    text-align: center;
+}
