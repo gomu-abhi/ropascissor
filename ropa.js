@@ -40,7 +40,7 @@ function playGame()
         }
         const body = document.querySelector(".new");
         const game = document.querySelector(".game");
-        game.innerText = '';
+        game.innerText = 'First to reach 5 points WIN';
         let computer = getComputerChoice();
         const roundwin = document.querySelector(".roundwin");
         if(human === "paper" && computer === "rock"){
@@ -127,7 +127,11 @@ function playGame()
             game.innerText = "Game Over\nVICTORY BELONGS TO US.";
             let btn = document.createElement("button");
             btn.innerText = "NEW GAME";
-            btn.style.backgroundColor = "black";
+            btn.classList.add("button-54");
+            // btn.style.backgroundColor = "hsl(0, 0%, 79%)";
+            // btn.style.color= "black";
+            // btn.style.fontSize = "35px";
+            // btn.style.border = "solid 2px black"
             body.appendChild(btn);
             btn.addEventListener("click", function(e){
                 humanScore = 0;
@@ -137,7 +141,7 @@ function playGame()
                 huch.innerText = '';
                 compch.innerText = '';
                 roundwin.innerText = '';
-                game.innerText = '';
+                game.innerText = 'First to reach 5 points WIN';
                 body.removeChild(e.target);
             })
         }
@@ -145,7 +149,11 @@ function playGame()
             game.innerText = "Game Over\nYOU LOST (TO A BOT)!";
             let btn = document.createElement("button");
             btn.innerText = "NEW GAME";
-            btn.style.backgroundColor = "black";
+            btn.classList.add("button-54");
+            // btn.style.backgroundColor = "hsl(0, 0%, 79%)";
+            // btn.style.color= "black";
+            // btn.style.fontSize = "35px";
+            // btn.style.border = "solid 2px black"
             body.appendChild(btn);
             btn.addEventListener("click", function(e){
                 husc.innerText = 0;
@@ -154,8 +162,8 @@ function playGame()
                 computerScore = 0;
                 huch.innerText = '';
                 compch.innerText = '';
+                game.innerText = 'First to reach 5 points WIN';
                 roundwin.innerText = '';
-                game.innerText = '';
                 body.removeChild(e.target);
             })
         }
