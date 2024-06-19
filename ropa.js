@@ -9,19 +9,19 @@ function getComputerChoice()
         return "paper";
     }
     else{
-        return "scissor";
+        return "scissors";
     }
 }
 
 function getHumanChoice()
 {
-    let x = prompt("Enter your Choice(rock, paper, scissor): ");
+    let x = prompt("Enter your Choice(rock, paper, scissors): ");
     let human = x.toLowerCase();
     let z = human;
     let k = 0;
-    while(z !== "rock" && z !== "paper" && z!=="scissor"){
+    while(z !== "rock" && z !== "paper" && z!=="scissors"){
         alert("INVALID CHOICE.");
-        let y = prompt("Enter a valid Choice(rock, paper, scissor): ");
+        let y = prompt("Enter a valid Choice(rock, paper, scissors): ");
         z = y.toLowerCase();
         k = 1;
     }
@@ -35,6 +35,9 @@ function playGame()
     
     function playRound(human)
     { 
+        if(humanScore === 5 || computerScore === 5){
+            return;
+        }
         const body = document.querySelector(".new");
         const game = document.querySelector(".game");
         game.innerText = '';
@@ -46,20 +49,20 @@ function playGame()
             roundwin.innerText = "You Win!";
             roundwin.style.cssText = "color: rgb(21, 117, 228);"
         }
-        else if(human === "rock" && computer === "scissor"){
-            console.log("You win! Rock beats Scissor.")
+        else if(human === "rock" && computer === "scissors"){
+            console.log("You win! Rock beats Scissors.")
             humanScore++;
             roundwin.innerText = "You Win!";
             roundwin.style.cssText = "color: rgb(21, 117, 228);"
         }
-        else if(human === "scissor" && computer === "paper"){
-            console.log("You win! Scissor beats Paper.");
+        else if(human === "scissors" && computer === "paper"){
+            console.log("You win! Scissors beats Paper.");
             humanScore++;
             roundwin.innerText = "You Win!";
             roundwin.style.cssText = "color: rgb(21, 117, 228);"
         }
-        else if(human === "paper" && computer === "scissor"){
-            console.log("You lose! Scissor beats Paper");
+        else if(human === "paper" && computer === "scissors"){
+            console.log("You lose! Scissors beats Paper");
             computerScore++;
             roundwin.innerText = "You Lose!";
             roundwin.style.cssText = "color: rgb(198, 27, 27);"
@@ -75,7 +78,7 @@ function playGame()
             roundwin.innerText = "Tie!";
             roundwin.style.cssText = "color: #cacaca;"
         }
-        else if(human === "scissor" && computer === "scissor"){
+        else if(human === "scissors" && computer === "scissors"){
             console.log("Tie! Both Scissors.");
             roundwin.innerText = "Tie!";
             roundwin.style.cssText = "color: #cacaca;"
@@ -85,8 +88,8 @@ function playGame()
             roundwin.innerText = "Tie!";
             roundwin.style.cssText = "color: #cacaca;"
         }
-        else if(human === "scissor" && computer === "rock"){
-            console.log("You lose! Rock beats Scissor.");
+        else if(human === "scissors" && computer === "rock"){
+            console.log("You lose! Rock beats Scissors.");
             computerScore++;
             roundwin.innerText = "You Lose!";
             roundwin.style.cssText = "color: rgb(198, 27, 27);"
@@ -99,16 +102,36 @@ function playGame()
         husc.innerText = `${humanScore}`;
         const huch = document.querySelector(".huch");
         huch.innerText = `${human.toUpperCase()}`
+        if(human === "rock"){
+            huch.innerText = `✊`;
+        }
+        else if (human === "scissors"){
+            huch.innerText = '✌️'
+        }
+        else if(human === "paper"){
+            huch.innerText = '✋';
+        }
         const compsc = document.querySelector(".compsc");
         const compch = document.querySelector(".compch");
+        if(computer === "rock"){
+            compch.innerText = `✊`;
+        }
+        else if (computer === "scissors"){
+            compch.innerText = '✌️'
+        }
+        else if(computer === "paper"){
+            compch.innerText = '✋';
+        }
         compsc.innerText = `${computerScore}`;
-        compch.innerText = `${computer.toUpperCase()}`
         if(humanScore === 5){
-            game.innerText = "Game Over\nYOU WIN!";
+            game.innerText = "Game Over\nVICTORY BELONGS TO US.";
             let btn = document.createElement("button");
             btn.innerText = "NEW GAME";
+            btn.style.backgroundColor = "black";
             body.appendChild(btn);
             btn.addEventListener("click", function(e){
+                humanScore = 0;
+                computerScore =0;
                 husc.innerText = 0;
                 compsc.innerText = 0;
                 huch.innerText = '';
@@ -117,41 +140,40 @@ function playGame()
                 game.innerText = '';
                 body.removeChild(e.target);
             })
-            humanScore = 0;
-            computerScore = 0;
         }
         else if(computerScore === 5){
-            game.innerText = "Game Over\nYOU LOSE!";
+            game.innerText = "Game Over\nYOU LOST (TO A BOT)!";
             let btn = document.createElement("button");
             btn.innerText = "NEW GAME";
+            btn.style.backgroundColor = "black";
             body.appendChild(btn);
             btn.addEventListener("click", function(e){
                 husc.innerText = 0;
                 compsc.innerText = 0;
+                humanScore = 0;
+                computerScore = 0;
                 huch.innerText = '';
                 compch.innerText = '';
                 roundwin.innerText = '';
                 game.innerText = '';
                 body.removeChild(e.target);
             })
-            computerScore = 0;
-            computerScore = 0;
         }
     }
 
     const rock = document.querySelector(".rock");
     const paper = document.querySelector(".paper");
-    const scissor = document.querySelector(".scissor");
+    const scissors = document.querySelector(".scissors");
 
     rock.addEventListener("click", function(){
-        playRound("rock");
-    });
+        playRound("rock");}
+    );
     paper.addEventListener("click", function(){
-        playRound("paper");
-    });
-    scissor.addEventListener("click", function(){
-        playRound("scissor");
-    });
+        playRound("paper");}
+    );
+    scissors.addEventListener("click", function(){
+        playRound("scissors");}
+    );
 
     
 }

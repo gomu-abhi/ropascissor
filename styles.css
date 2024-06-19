@@ -1,23 +1,28 @@
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
 *{
     background-color: #2a2a2a;
-    color: #cacaca;
+    color: hsl(0, 0%, 79%);
 }
 
 .first{
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 40px;
+    font-size: 48px;
+    color: #FFA07A;
 }
 
 button{
     padding: 5px 10px;
-    border-radius: 10px;
-    color: #000000;
-    background-color:#cacaca;
+    border-radius: 10px;color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+    background-color: black;
     font-size: large;
 }
 
 h1{
     text-align: center;
+    font-family: sans-serif;
 }
 
 .buttons{
@@ -53,16 +58,18 @@ h1{
 
 .disp .huch{
     color:rgb(21, 117, 228);
+    font-size :  40px;
 }
 
 .disp .compch{
     color:rgb(198, 27, 27);
+    font-size:  40px;
 }
 
 .disp{
     font-size: 30px;
     display:flex;
-    gap: 100px;
+    gap: 200px;
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -78,9 +85,12 @@ h1{
     text-align: center;
     margin: 30px 0;
     font-weight: bold;
-    color:color-mix(in hsl shorter hue, rgb(255, 155, 16) 100%, black)
+    color: #8bc34a;
+    font-family: sans-serif;
 }
 
 .new{
     text-align: center;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;;
 }
