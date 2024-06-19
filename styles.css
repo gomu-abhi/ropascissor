@@ -12,14 +12,116 @@
     color: #FFA07A;
 }
 
-.rock, .paper, .scissors{
+.rock,.paper, .scissors{
     padding: 5px 10px;
     border-radius: 10px;
-    color: #fee;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
-    background-color: black;
-    font-size: large;
     cursor: pointer;
+}
+
+/* CSS */
+.rock {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #f5f5f5;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.rock:hover,
+.rock:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.rock:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.paper {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #f5f5f5;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.paper:hover,
+.paper:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.paper:active {
+    background: var(--color);
+    color: #fff;
+}
+
+.scissors {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #f5f5f5;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.scissors:hover,
+.scissors:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.scissors:active {
+    background: var(--color);
+    color: #fff;
 }
 
 h1{
@@ -35,7 +137,7 @@ h1{
 }
 
 .board{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .result{
@@ -60,12 +162,12 @@ h1{
 
 .disp .huch{
     color:rgb(21, 117, 228);
-    font-size :  40px;
+    font-size :  50px;
 }
 
 .disp .compch{
     color:rgb(198, 27, 27);
-    font-size:  40px;
+    font-size:  50px;
 }
 
 .disp{
